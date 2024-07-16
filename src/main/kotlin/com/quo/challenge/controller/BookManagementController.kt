@@ -1,6 +1,5 @@
 package com.quo.challenge.controller
 
-import com.quo.challenge.handler.ErrorResponse
 import com.quo.challenge.model.*
 import com.quo.challenge.repository.BookManagementRepository
 import org.springframework.validation.BindingResult
