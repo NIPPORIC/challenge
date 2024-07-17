@@ -2,7 +2,6 @@ package com.quo.challenge.controller
 
 import com.quo.challenge.model.*
 import com.quo.challenge.repository.BookManagementRepository
-import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.*
 
 
@@ -21,7 +20,7 @@ class BookManagementController(
      * 書籍名と著者名を必須とした登録機能
      */
     @PostMapping("/registerBookInfo")
-    fun registerBookInfo(@RequestBody request: BookInfoRegisterRequest, result: BindingResult): String {
+    fun registerBookInfo(@RequestBody request: BookInfoRegisterRequest): String {
         request.toBookInfoRecord()
             .let {bookManagementRepository.insert(it)}
         // 正常終了

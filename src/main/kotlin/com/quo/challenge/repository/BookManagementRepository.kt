@@ -54,6 +54,12 @@ class  BookManagementRepository(
         .fetch()
         .into(MBookRecord::class.java)
 
+    /**
+     * DB初期化
+     */
+    fun truncateMBook(): Any = dslContext.truncate("m_book")
+        .restartIdentity().execute()
+
     companion object {
         private val M_BOOK = MBook.M_BOOK
     }
